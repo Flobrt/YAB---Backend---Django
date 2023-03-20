@@ -1,0 +1,9 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{{apprenant_add}}</p>
+    <input type="submit" value="Ajouter">
+</form>
+{% endblock %}
+

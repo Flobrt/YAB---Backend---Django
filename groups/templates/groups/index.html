@@ -1,0 +1,21 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+<div class="col">
+    <div class="container shadow p-5 my-5 border" href="{% url 'brief_list' %}">
+        <h1>Briefs</h1>
+        <p> Gestion  des différents briefs: </p>
+        <a href="{% url 'brief_list' %}">Brief</a>
+    </div>
+</div>
+
+<div class="col">
+    <div class="container shadow p-5 my-5 bg-dark text-white">
+            <h1>Apprenants</h1>
+            <p> Gestion  des différents briefs: </p>
+            <a href="{% url 'apprenant_list' %}">Apprenant</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

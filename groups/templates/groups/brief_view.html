@@ -1,0 +1,18 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+
+<ul> 
+    <li><p><b><u>Nom du brief :</u></b> {{brief.titre_brief}}</p></li>
+    <li><p><b><u>Url du brief :</u></b> {{brief.url_brief}}</p></li>
+    <li><p><b><u>Nb apprenants par nome :</u></b> {{brief.nb_appr_par_nome}}</p></li>
+</ul>
+
+
+<a href="{% url 'binomotron' brief.id %}">Créer des groupes</a>
+<br>
+<a href="/groups/brief/{{ brief.id }}/update">Modifier le brief</a>
+<br>
+<a href="{% url 'delete' brief.id %}">Supprimer le brief</a>
+
+
+{% endblock %}

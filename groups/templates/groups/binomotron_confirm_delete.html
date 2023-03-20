@@ -1,0 +1,8 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+
+<form action ="{% url 'binomotron_delete' brief.id %}" method="POST">{% csrf_token %}
+    <P> Etes-vous sûr de vouloir supprimer les groupes? </P>
+    <p><input type='submit' value="Ok"/> <a href='../'>supprimer</a> </p>
+</form>
+{% endblock %}

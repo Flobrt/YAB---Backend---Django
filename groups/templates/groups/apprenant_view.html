@@ -1,0 +1,10 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+<ul> 
+    <li>{{apprenant.nom_apprenant}}</li> 
+    <li>{{apprenant.prenom_apprenant}} </li>
+    <!-- <a href="/groups/apprenant/{{ apprenant.id }}/delete">Cliquer pour Supprimer {{ apprenant }}</a> -->
+    <a href="{% url 'apprenant_delete' apprenant.id %}" class="btn btn-danger">Supprimer l'apprenant</a>
+</ul>   
+
+{% endblock %}

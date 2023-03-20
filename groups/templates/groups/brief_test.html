@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TUT</title>
+   </head>
+   <body>
+      {% for fm in stu_form %}
+      <form method="post">
+         {%csrf_token%}
+         {{fm.errors}}<br>
+         {{fm.label}}:{{fm}}<br>
+      {%endfor%}
+         <button type="submit">Submit</button>
+      </form>
+   </body>
+</html>

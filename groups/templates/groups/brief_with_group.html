@@ -1,0 +1,28 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+
+<ul> 
+    <li><p><b><u>Nom du brief :</u></b> {{brief.titre_brief}}</p></li>
+    <li><p><b><u>Url du brief :</u></b> {{brief.url_brief}}</p></li>
+    <li><p><b><u>Nb apprenants par nome :</u></b> {{brief.nb_appr_par_nome}}</p></li>
+</ul>
+
+<p>Les groupes sont créés.  </p>
+<h4><u>Voici les groupes qui ont déja été généré aléatoirement : </h4></u>
+
+<ul>
+    <br>
+    {% for grp in list_final %}
+    <li>
+        {% for appr in grp %} 
+            {{appr.1}} {{appr.2}},
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="/groups/brief/{{ brief.id }}/update">Modifier le brief</a>
+<br>
+<a href="{% url 'delete' brief.id %}">Supprimer le brief</a>
+
+{% endblock %}

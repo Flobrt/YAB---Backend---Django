@@ -1,0 +1,8 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+
+<form action ="{% url 'apprenant_delete' apprenant.id %}" method="POST">{% csrf_token %}
+    <P> Are you sure you want to delete "{{apprenant.nom_apprenant}} {{apprenant.prenom_apprenant}} "? </P>
+    <p><input type='submit' value="Ok"/> <a class="btn btn-warning" href='../../'>retour</a> </p>
+</form>
+{% endblock %}

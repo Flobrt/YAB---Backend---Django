@@ -1,0 +1,8 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+
+<form action ="{% url 'delete' brief.id %}" method="POST">{% csrf_token %}
+    <P> Are you sure you want to delete "{{ brief.titre_brief }}"? </P>
+    <p><input type='submit' value="Ok"/> <a href='../'>Cancel</a> </p>
+</form>
+{% endblock %}

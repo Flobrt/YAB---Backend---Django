@@ -1,0 +1,34 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+<h1>Liste des apprenants:</h1>
+<p>Veuillez sélectionner un apprenant pour modifier ou supprimer</p>
+    {% if apprenant_list %}
+    <div class="container mt-3">
+        <form method="post">{% csrf_token %}
+            {{ apprenant_add.as_p }}
+            
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+
+        <ul class="list-group list-group-flush">
+        {% for apprenant in apprenant_list %}
+            <li  class="list-group-item">
+                <a href="/groups/apprenant/{{ apprenant.id }}">{{ apprenant }}</a> -
+                <a href="/groups/apprenant/{{ apprenant.id }}/update" class="btn btn-outline-info">modifier</a></button>
+                <a href="{% url 'apprenant_delete' apprenant.id %}" class="btn btn-outline-danger">X</a>
+
+                </li>
+
+        {% endfor %}
+            
+        </ul>
+    </div>
+        
+        
+    {% else %}
+        <p>Pas d'apprenant valide.</p>
+    {% endif %}
+        <!-- <button onclick="window.location.href = '/groups/apprenant/add'">Ajouter un apprenant</button> -->
+        
+{% endblock %}
+

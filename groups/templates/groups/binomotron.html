@@ -1,0 +1,16 @@
+{% extends 'groups/base.html' %}
+{% block content %}
+<h3>Voici les groupes générés aléatoirement : </h3>
+<ul>
+   
+    {% for grp in a %}
+    <li>
+        <mark>Groupe '{{grp.0}}' :</mark>
+        {% for appr in grp.1 %} 
+            {{appr.nom_apprenant}} {{appr.prenom_apprenant}},
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ul>
+<p><a href='../'>Retour</a> </p>
+{% endblock %}
